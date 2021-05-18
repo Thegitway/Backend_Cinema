@@ -14,19 +14,16 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @ToString
-@Table(name = "Cinema")
-public class Cinema implements Serializable {
+@Table(name = "Place")
+public class Place implements Serializable {
     @Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    private String name;
+    private int numero;
     private double longitude;
     private double latitude;
     private double altitude;
-    private int nombreSalles;
     @ManyToOne
-    private Ville ville;
-
-    @OneToMany(mappedBy = "cinema")
-    private Collection<Salle> salles;
-
+    private Salle salle;
+    @OneToMany(mappedBy="place")
+    private Collection<Ticket> tickets;
 }
