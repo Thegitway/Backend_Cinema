@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class controller {
     @Autowired
     CinemaRepository cinemaRepository;
 
+    @CrossOrigin(origins = "*")
     @GetMapping(path="/cinema")
     public List<Cinema> getCinema()
     {
