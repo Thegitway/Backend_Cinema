@@ -18,7 +18,6 @@ public class Categorie implements Serializable {
     @Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
-
     @ManyToOne
     private Film film;
 }

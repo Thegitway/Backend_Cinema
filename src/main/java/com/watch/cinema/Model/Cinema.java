@@ -16,7 +16,8 @@ import java.util.List;
 @ToString
 @Table(name = "Cinema")
 public class Cinema implements Serializable {
-    @Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
     private double longitude;

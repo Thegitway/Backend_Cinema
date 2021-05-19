@@ -17,12 +17,14 @@ import java.util.List;
 @ToString
 @Table(name = "Ville")
 public class Ville implements Serializable {
-    @Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
     private double longitude;
     private double latitude;
     private double altitude;
+
     @OneToMany(mappedBy = "ville")
     private Collection<Cinema> cinemas;
 }
