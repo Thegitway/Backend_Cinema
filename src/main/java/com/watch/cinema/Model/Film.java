@@ -27,7 +27,7 @@ public class Film implements Serializable {
     private String description;
     private String photo;
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date dateSortie;
     @OneToMany(mappedBy = "film")
     private Collection<Categorie> categories;

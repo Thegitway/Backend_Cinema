@@ -1,9 +1,6 @@
 package com.watch.cinema;
 
-import com.watch.cinema.Model.Cinema;
-import com.watch.cinema.Model.Film;
-import com.watch.cinema.Model.Salle;
-import com.watch.cinema.Model.Ville;
+import com.watch.cinema.Model.*;
 import com.watch.cinema.Repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -41,7 +39,8 @@ public class CinemaApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
         try {
             List<Salle> salles=null;
-            List<CategoryRepository> categories=null;
+            List<Categorie> categories=new ArrayList<Categorie>();
+            categories.add(new Categorie(null,"Action",null));
             filmRepository.save(new Film(null,"Spider-man",2,"Sam Raimi","The " +
                     "fictional character Spider-Man, a comic book superhero " +
                     "created by Stan Lee and Steve Ditko and featured in Marvel Comics publications," +
@@ -49,21 +48,53 @@ public class CinemaApplication implements CommandLineRunner {
                     "theatrical and made-for-television films.",
                     "https://firebasestorage.googleapis.com/v0/b/cinema-4ef8e.appspot.com/o/220px-Spider-Man2002Poster.jpg?alt=media&token=588168df-5825-45ff-82a6-ed0e5e3772db",
                     new Date(2000,11,10),null));
+            filmRepository.save(new Film(null,"Super-man",2,"Jerry Siegel","The " +
+                    "Superman is a fictional character who first appeared in American comic books published by DC Comics. The character was created by writer Jerry Siegel and artist Joe Shuster.",
+                    "https://firebasestorage.googleapis.com/v0/b/cinema-4ef8e.appspot.com/o/supe.jpg?alt=media&token=a7d77197-83f8-472e-993c-3a7b684254d7",
+                    new Date(1000, Calendar.MARCH,30),categories));
 
-            Ville villeRabat=new Ville(null,"Rabat",31,7,1);
-            villeRepository.save(villeRabat);
-            Ville ville=new Ville(null,"Casablanca",31,7,1);
+            Ville ville=new Ville(null,"Rabat",31,7,1);
             villeRepository.save(ville);
+            Cinema cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+            ville=new Ville(null,"Casablanca",31,7,1);
+            villeRepository.save(ville);
+            cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+            cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+            cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+            cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+
+
 
              ville=new Ville(null,"Marrakech",31,7,1);
             villeRepository.save(ville);
+            cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+             cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
              ville=new Ville(null,"Agadir",31,7,1);
             villeRepository.save(ville);
+             cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
              ville=new Ville(null,"Tanger",31,7,1);
             villeRepository.save(ville);
-            Cinema cinema=new Cinema(null,"MegaCasa",31,7,1,10,ville,null);
+             cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
             cinemaRepository.save(cinema);
-            cinemaRepository.save(new Cinema(null,"MegaRabat",31,7,1,10,villeRabat,null));
+            cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+             cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+             cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+             cinema=new Cinema(null,"Mega",31,7,1,10,ville,null);
+            cinemaRepository.save(cinema);
+            cinemaRepository.save(new Cinema(null,"Mega",31,7,1,10,ville,null));
 
             /*List<Cinema> cinemas=new ArrayList<Cinema>();
             cinemas.add(cinema);*/
