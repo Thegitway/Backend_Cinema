@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class controller {
 
     @Autowired
@@ -42,13 +43,13 @@ public class controller {
     }
 
     @CrossOrigin(origins = "*")
-    @PostMapping(path="/cinemaVille")
-    public List<Cinema> getCinemasByVille(Ville ville,@RequestParam(name="page",defaultValue="0") int page,
-                                          @RequestParam(name="size",defaultValue="5")int size)
+    @GetMapping(path="/cinemaVille/{id}")
+    public List<Cinema> getCinemasByVille(@PathVariable Long id)
     {
-        Page<Cinema> cinemasPage= cinemaRepository.findCinemaByVille(ville, PageRequest.of(page,size));
-        return  cinemasPage.getContent();
-
+        //Ville ville=new Ville();ville.setId(id);
+        //Page<Cinema> cinemasPage= cinemaRepository.findCinemaByVille(ville, PageRequest.of(page,size));
+        List<Cinema> cinemas=cinemaRepository.findCinemaByVilleId(id);
+        return  cinemas;
     }
 
 

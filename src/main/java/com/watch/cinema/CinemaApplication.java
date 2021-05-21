@@ -50,10 +50,11 @@ public class CinemaApplication implements CommandLineRunner {
                     "https://firebasestorage.googleapis.com/v0/b/cinema-4ef8e.appspot.com/o/220px-Spider-Man2002Poster.jpg?alt=media&token=588168df-5825-45ff-82a6-ed0e5e3772db",
                     new Date(2000,11,10),null));
 
+            Ville villeRabat=new Ville(null,"Rabat",31,7,1);
+            villeRepository.save(villeRabat);
             Ville ville=new Ville(null,"Casablanca",31,7,1);
             villeRepository.save(ville);
-           Ville villeRabat=new Ville(null,"Rabat",31,7,1);
-            villeRepository.save(villeRabat);
+
              ville=new Ville(null,"Marrakech",31,7,1);
             villeRepository.save(ville);
              ville=new Ville(null,"Agadir",31,7,1);
