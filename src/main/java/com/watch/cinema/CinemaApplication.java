@@ -42,7 +42,6 @@ public class CinemaApplication implements CommandLineRunner {
         try {
             List<Salle> salles=null;
             List<CategoryRepository> categories=null;
-            cinemaRepository.save(new Cinema(null,"MegaRabat",31,7,1,10,null,null));
             filmRepository.save(new Film(null,"Spider-man",2,"Sam Raimi","The " +
                     "fictional character Spider-Man, a comic book superhero " +
                     "created by Stan Lee and Steve Ditko and featured in Marvel Comics publications," +
@@ -53,8 +52,8 @@ public class CinemaApplication implements CommandLineRunner {
 
             Ville ville=new Ville(null,"Casablanca",31,7,1);
             villeRepository.save(ville);
-            ville=new Ville(null,"Rabat",31,7,1);
-            villeRepository.save(ville);
+           Ville villeRabat=new Ville(null,"Rabat",31,7,1);
+            villeRepository.save(villeRabat);
              ville=new Ville(null,"Marrakech",31,7,1);
             villeRepository.save(ville);
              ville=new Ville(null,"Agadir",31,7,1);
@@ -63,6 +62,7 @@ public class CinemaApplication implements CommandLineRunner {
             villeRepository.save(ville);
             Cinema cinema=new Cinema(null,"MegaCasa",31,7,1,10,ville,null);
             cinemaRepository.save(cinema);
+            cinemaRepository.save(new Cinema(null,"MegaRabat",31,7,1,10,villeRabat,null));
 
             /*List<Cinema> cinemas=new ArrayList<Cinema>();
             cinemas.add(cinema);*/
