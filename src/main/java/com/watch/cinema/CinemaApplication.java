@@ -51,20 +51,23 @@ public class CinemaApplication implements CommandLineRunner {
                     "https://firebasestorage.googleapis.com/v0/b/cinema-4ef8e.appspot.com/o/220px-Spider-Man2002Poster.jpg?alt=media&token=588168df-5825-45ff-82a6-ed0e5e3772db",
                     new Date(2000,11,10),null));
 
-            Ville ville=new Ville(null,"Casablanca",31,7,1,null);
+            Ville ville=new Ville(null,"Casablanca",31,7,1);
+            villeRepository.save(ville);
+            ville=new Ville(null,"Rabat",31,7,1);
+            villeRepository.save(ville);
+             ville=new Ville(null,"Marrakech",31,7,1);
+            villeRepository.save(ville);
+             ville=new Ville(null,"Agadir",31,7,1);
+            villeRepository.save(ville);
+             ville=new Ville(null,"Tanger",31,7,1);
             villeRepository.save(ville);
             Cinema cinema=new Cinema(null,"MegaCasa",31,7,1,10,ville,null);
             cinemaRepository.save(cinema);
-            List<Cinema> cinemas=new ArrayList<Cinema>();
-            cinemas.add(cinema);
 
-
-
-
+            /*List<Cinema> cinemas=new ArrayList<Cinema>();
+            cinemas.add(cinema);*/
 
             System.out.println("All GOOD !");
-            System.out.println(cinemaRepository.findAll());
-            //filmRepository.save(new Film())
         }catch(Exception e)
         {
             System.out.println(e.getMessage());

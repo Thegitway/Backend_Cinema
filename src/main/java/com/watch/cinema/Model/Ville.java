@@ -25,6 +25,4 @@ public class Ville implements Serializable {
     private double latitude;
     private double altitude;
 
-    @OneToMany(mappedBy = "ville")
-    private Collection<Cinema> cinemas;
 }
