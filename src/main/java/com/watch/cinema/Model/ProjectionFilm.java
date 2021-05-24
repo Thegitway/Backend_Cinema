@@ -27,6 +27,7 @@ public class ProjectionFilm implements Serializable {
     private double prix;
     @ManyToOne
     private Seance seance;
-
+    @ManyToOne
+    private Film film;
 
 }

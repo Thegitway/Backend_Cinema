@@ -52,11 +52,9 @@ public class CinemaApplication implements CommandLineRunner {
             Place place=new Place(null,11,31,-7,1,salle);
             placeRepository.save(place);
 
-            ProjectionFilm projectionFilm=new ProjectionFilm(null,new Date(2000,11,10),70,seance);
-            proRepository.save(projectionFilm);
 
-            Ticket ticket = new Ticket(null,"Omar",70,226846,true,place,projectionFilm);
-           ticketRepository.save(ticket);
+
+
             Film film= new Film(null,"Spider-man",2,"Sam Raimi","The " +
                     "fictional character Spider-Man, a comic book superhero " +
                     "created by Stan Lee and Steve Ditko and featured in Marvel Comics publications," +
@@ -65,6 +63,10 @@ public class CinemaApplication implements CommandLineRunner {
                     "https://firebasestorage.googleapis.com/v0/b/cinema-4ef8e.appspot.com/o/220px-Spider-Man2002Poster.jpg?alt=media&token=588168df-5825-45ff-82a6-ed0e5e3772db",
                     new Date(2000,11,10));
             filmRepository.save(film);
+            ProjectionFilm projectionFilm=new ProjectionFilm(null,new Date(2000,11,10),70,seance,film);
+            proRepository.save(projectionFilm);
+            Ticket ticket = new Ticket(null,"Omar",70,226846,true,place,projectionFilm);
+            ticketRepository.save(ticket);
 
             filmRepository.save(new Film(null,"Super-man",2,"Jerry Siegel","The " +
                     "Superman is a fictional character who first appeared in American comic books published by DC Comics. The character was created by writer Jerry Siegel and artist Joe Shuster.",

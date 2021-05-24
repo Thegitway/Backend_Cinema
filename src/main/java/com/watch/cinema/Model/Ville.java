@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -24,5 +25,7 @@ public class Ville implements Serializable {
     private double longitude;
     private double latitude;
     private double altitude;
+
+
 
 }
