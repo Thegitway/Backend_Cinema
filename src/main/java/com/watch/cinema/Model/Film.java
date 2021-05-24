@@ -29,7 +29,6 @@ public class Film implements Serializable {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date dateSortie;
-    @OneToMany(mappedBy = "film")
-    private Collection<Categorie> categories;
+
 
 }

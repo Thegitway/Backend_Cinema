@@ -23,5 +23,7 @@ public class Seance {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date heureDebut;
+    @OneToOne
+    private Salle salle;
 }
 

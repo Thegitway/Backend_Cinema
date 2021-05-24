@@ -27,7 +27,5 @@ public class Cinema implements Serializable {
     @ManyToOne
     private Ville ville;
 
-    @OneToMany(mappedBy = "cinema")
-    private Collection<Salle> salles;
 
 }

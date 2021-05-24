@@ -22,12 +22,11 @@ public class ProjectionFilm implements Serializable {
     @Id@GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date dateProjection;
     private double prix;
-    @OneToMany(mappedBy="projectionFilm")
-    private Collection<Ticket> tickets;
     @ManyToOne
     private Seance seance;
+
 
 }
